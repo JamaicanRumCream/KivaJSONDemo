@@ -49,6 +49,20 @@
     
     //3 set label
     _humanReadable.text = [NSString stringWithFormat:@"Latest loan: %@ from %@ needs another $%.2f to pursue their business dream", loan[@"name"], (NSDictionary *)loan[@"location"][@"country"], outstandingAmount];
+    
+    //////////// make json
+    
+    NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:
+                          loan[@"name"], @"who",
+                          (NSDictionary *)loan[@"location"][@"country"], @"where",
+                          [NSNumber numberWithFloat:outstandingAmount], @"what",
+                          nil];
+    //convert it
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:info
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    _jsonSummary.text = [[NSString alloc] initWithData:jsonData
+                                             encoding:NSUTF8StringEncoding];
 }
 
 @end
