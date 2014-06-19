@@ -17,6 +17,67 @@
 
 @end
 
+
+//EXTENSIONS
+@interface NSDictionary(JSONCategories)
++(NSDictionary *)dictionaryWithContentsOfJSONString:(NSString *)urlAddress;
+-(NSData *)toJSON;
+@end
+
+@implementation NSDictionary(JSONCategories)
+
++(NSDictionary *)dictionaryWithContentsOfJSONString:(NSString *)urlAddress
+{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlAddress]];
+    __autoreleasing NSError *error = nil;
+    id result = [NSJSONSerialization JSONObjectWithData:data
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
+    return result;
+}
+
+-(NSData *)toJSON
+{
+    NSError *error = nil;
+    id result = [NSJSONSerialization dataWithJSONObject:self
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
+    return result;
+}
+@end
+
+@interface NSArray(JSONCategories)
++(NSArray *)arrayWithContentsOfJSONString:(NSString *)urlAddress;
+-(NSData *)toJSON;
+@end
+
+@implementation NSArray(JSONCategories)
++(NSArray *)arrayWithContentsOfJSONString:(NSString *)urlAddress
+{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlAddress]];
+    __autoreleasing NSError *error = nil;
+    id result = [NSJSONSerialization JSONObjectWithData:data
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
+    return result;
+}
+
+-(NSData *)toJSON
+{
+    NSError *error = nil;
+    id result = [NSJSONSerialization dataWithJSONObject:self
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
+    return result;
+}
+
+@end
+//END EXTENSIONS
+
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -28,6 +89,7 @@
         [self performSelectorOnMainThread:@selector(fetchData:) withObject:data waitUntilDone:YES];
     });
 }
+
 
 - (void)fetchData:(NSData *)responseData
 {
