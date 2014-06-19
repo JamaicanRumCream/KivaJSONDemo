@@ -29,5 +29,26 @@
     });
 }
 
+- (void)fetchData:(NSData *)responseData
+{
+    //parse out json data
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSArray *latestLoans = json[@"loans"];
+    NSLog(@"loans: %@", latestLoans);
+    
+    //1
+    NSDictionary *loan = latestLoans[0];
+    
+    //2
+    NSNumber *fundedAmount = loan[@"funded_amount"];
+    NSNumber *loanAmount = loan[@"loan_amount"];
+    float outstandingAmount = loanAmount.floatValue - fundedAmount.floatValue;
+    
+    //3 set label
+    _humanReadable.text = [NSString stringWithFormat:@"Latest loan: %@ from %@ needs another $%.2f to pursue their business dream", loan[@"name"], (NSDictionary *)loan[@"location"][@"country"], outstandingAmount];
+}
 
 @end
