@@ -12,11 +12,22 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *humanReadable;
+@property (weak, nonatomic) IBOutlet UILabel *jsonSummary;
 
 @end
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    dispatch_async(kBgQueue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:kLastKivaLoansURL];
+        [self performSelectorOnMainThread:@selector(fetchData:) withObject:data waitUntilDone:YES];
+    });
+}
 
 
 @end
