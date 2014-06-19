@@ -460,6 +460,7 @@
 				EA7BE10F195321E700187764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA7BE110195321E700187764 /* Build configuration list for PBXNativeTarget "KivaJSONDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +469,7 @@
 				EA7BE112195321E700187764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

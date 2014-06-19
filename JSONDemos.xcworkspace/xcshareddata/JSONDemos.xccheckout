@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B9557474-222E-4C7C-B9C4-669C8ECEF244</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JSONDemos</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>122B144C-9173-4F3D-B5E9-55E4A93762E7</key>
+		<string>https://github.com/JamaicanRumCream/KivaJSONDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JSONDemos.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>122B144C-9173-4F3D-B5E9-55E4A93762E7</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JamaicanRumCream/KivaJSONDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>122B144C-9173-4F3D-B5E9-55E4A93762E7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>122B144C-9173-4F3D-B5E9-55E4A93762E7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KivaJSONDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
